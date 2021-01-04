@@ -110,49 +110,36 @@ yargs.command({
     builder:{
         title:{
             describe:'title of the note',
-            //demandOption:true,
+           // demandOption:true,
             type:'string'
-        },
-    handler: function(){     
+        }
+    },
+    handler: function(argv){    
         console.log('title is',argv.title)
-        console.log('note has been deleted')
-    } }
+        console.log('body is',argv.body)
+        
+     //   console.log('note has been deleted')
+    }
+})
+yargs.command({
+    command:'read',
+    describe:'read note',
+    builder:{
+        title:{
+            describe:'title of the note',
+           // demandOption:true,
+            type:'string'
+        }
+    },
+    handler: function(argv){    
+         console.log('title is',argv.title)
+        // console.log('body is',argv.body)
+        
+       console.log('note has been read')
+    }
 })
 
-// yargs.command({
-//     command:'read',
-//     describe:'read note',
-//     builder:{
-//         title:{
-//             describe:'title of the note',
-//             demandOption:true,
-//             type:'string'
-//         },
-//     },
-//     handler: function(){    
-//         console.log('note has been read')
-//     }
-// })
 
-// yargs.command({
-//     command:'list',
-//     describe:'list note',
-//     builder:{
-//         title:{
-//             describe:'title of the note',
-//             demandOption:true,
-//             type:'string'
-//         },
-//         body:{
-//             describe:'body of the note',
-//             demandOption:true,
-//             type:'string'
-//         }
-//     },
-//     handler: function(){    
-//         console.log('note has been listed')
-//     }
-// })
 
 console.log(yargs.argv)
 yargs.parse()
